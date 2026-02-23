@@ -1,4 +1,4 @@
-ENVIRONMENTAL STATISTICS LAB
+#####ENVIRONMENTAL STATISTICS LAB
 # COMPARING TWO FISH POPULATION MEANS
 #
 # OBJECTIVES:
@@ -18,14 +18,14 @@ ENVIRONMENTAL STATISTICS LAB
 #   DATA → EXPLORATION → ESTIMATION → INFERENCE
 ############################################################
 
-# We sampled Red Drum from two habitats:
+# Sampled Red Drum from two habitats:
 #   Population 1: Seagrass meadow
 #   Population 2: Artificial reef
 #
-# We measured total length (mm).
+# Measured total length (mm).
 #
 # Question:
-# Are fish larger on reefs than in seagrass?
+# Are Red Drum larger on reefs than in seagrass?
 ############################################################
 
 ##data = fish_data
@@ -80,7 +80,7 @@ quantiles_seagrass; quantiles_reef
 
 #############Part 2 Confidence Intervals###############
 ############################################################
-# 4 — CONFIDENCE INTERVALS (STEP-BY-STEP EXPLANATION)
+#  CONFIDENCE INTERVALS (STEP-BY-STEP EXPLANATION)
 ############################################################
 
 # -------------------------
@@ -232,14 +232,14 @@ boot_sd_reef
 hist(boot_seagrass$t,
      main = "Bootstrap Distribution of Seagrass Mean",
      xlab = "Mean Length (mm)",
-     col = "lightblue",
+     col = "lightgreen",
      breaks = 30)
 
 # Reef
 hist(boot_reef$t,
      main = "Bootstrap Distribution of Reef Mean",
      xlab = "Mean Length (mm)",
-     col = "lightgreen",
+     col = "brown",
      breaks = 30)
 
 
@@ -271,7 +271,9 @@ t_result
 ############################################################
 # One-Way ANOVA
 ############################################################
+##Are all indepdent variables factors?
 
+fish_data$habitat<-as.factor(fish_data$habitat)
 anova_model <- aov(length ~ habitat, data = fish_data)
 summary(anova_model)
 
@@ -286,7 +288,7 @@ anova_res<-residuals(anova_model)##retrieve the residuals
 shapiro.test(anova_res)##test of normality
 
 ##Test of variance
-
+library(car)
 leveneTest(anova_model)
 
 ##boxplots
