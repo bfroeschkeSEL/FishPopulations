@@ -1,5 +1,4 @@
-############################################################
-# ENVIRONMENTAL STATISTICS LAB
+ENVIRONMENTAL STATISTICS LAB
 # COMPARING TWO FISH POPULATION MEANS
 #
 # OBJECTIVES:
@@ -174,11 +173,11 @@ ggplot(plot_data, aes(x = habitat, y = mean_length)) +
   theme_minimal(base_size = 14)                             
 
 ##Do the intervals overlap?
-  
+
 ##If they overlap slightly, does that guarantee "no difference"?
-  
+
 ##Are the intervals narrow or wide?
-  
+
 ##What controls CI width? (Sample size? Variability?)
 
 #############Part 3 Bootstrapping################
@@ -254,10 +253,10 @@ t_result
 
 
 ##State null hypothesis:
-  ##H0: μ_seagrass = μ_reef
+##H0: μ_seagrass = μ_reef
 
 ##State alternative:
- ## HA: μ_seagrass ≠ μ_reef
+## HA: μ_seagrass ≠ μ_reef
 
 ## Report test statistic.
 
@@ -305,13 +304,13 @@ ggplot(fish_data, aes(x = habitat, y = length, fill = habitat)) +
 
 
 ###What did exploratory analysis suggest?
-  
+
 ###Did confidence intervals suggest separation?
-  
+
 ###Did bootstrap agree with parametric inference?
-  
+
 ###Did t-test and ANOVA agree?
-  
+
 ###Why is starting with hypothesis testing bad practice?
-  
+
 ###What ecological explanation might exist for size differences?
